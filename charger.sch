@@ -5189,19 +5189,6 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="USB-VERT">
-<hole x="0" y="0" drill="2"/>
-<hole x="16.55" y="0" drill="2"/>
-<pad name="P$1" x="4.95" y="1" drill="1.3"/>
-<pad name="P$2" x="11.6" y="1" drill="1.3" rot="R180"/>
-<pad name="P$3" x="4.95" y="-2.2" drill="1.3"/>
-<pad name="P$4" x="11.6" y="-2.2" drill="1.3"/>
-<smd name="1" x="6.85" y="-2.1" dx="0.4" dy="2.2" layer="1"/>
-<smd name="2" x="7.55" y="-2.1" dx="0.4" dy="2.2" layer="1"/>
-<smd name="3" x="8.25" y="-2.1" dx="0.4" dy="2.2" layer="1"/>
-<smd name="4" x="8.95" y="-2.1" dx="0.4" dy="2.2" layer="1"/>
-<smd name="5" x="9.65" y="-2.1" dx="0.4" dy="2.2" layer="1"/>
-</package>
 <package name="SRU1028">
 <smd name="P$1" x="0.9" y="1.8" dx="1.8" dy="3.6" layer="1"/>
 <smd name="P$2" x="9.9" y="1.8" dx="1.8" dy="3.6" layer="1"/>
@@ -5210,19 +5197,17 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <wire x1="10.9" y1="-3.2" x2="-0.1" y2="-3.2" width="0.127" layer="21"/>
 <wire x1="-0.1" y1="-3.2" x2="-0.1" y2="6.8" width="0.127" layer="21"/>
 </package>
+<package name="USB2">
+<pad name="SHIELD1" x="0" y="0" drill="1.2" rot="R90"/>
+<pad name="SHIELD2" x="8.2" y="0" drill="1.2"/>
+<pad name="2" x="3.45" y="0.775" drill="0.7"/>
+<pad name="4" x="4.75" y="0.775" drill="0.7"/>
+<pad name="1" x="2.8" y="-0.775" drill="0.7"/>
+<pad name="3" x="4.1" y="-0.775" drill="0.7"/>
+<pad name="5" x="5.4" y="-0.775" drill="0.7"/>
+</package>
 </packages>
 <symbols>
-<symbol name="USB-VERT">
-<wire x1="0" y1="0" x2="0" y2="15.24" width="0.254" layer="94"/>
-<wire x1="0" y1="15.24" x2="15.24" y2="15.24" width="0.254" layer="94"/>
-<wire x1="15.24" y1="15.24" x2="15.24" y2="0" width="0.254" layer="94"/>
-<wire x1="15.24" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<pin name="VCC" x="-5.08" y="12.7" length="middle"/>
-<pin name="D-" x="-5.08" y="10.16" length="middle"/>
-<pin name="D+" x="-5.08" y="7.62" length="middle"/>
-<pin name="ID" x="-5.08" y="5.08" length="middle"/>
-<pin name="GND" x="-5.08" y="2.54" length="middle"/>
-</symbol>
 <symbol name="SRU1028">
 <wire x1="5.08" y1="0" x2="7.62" y2="0" width="0.254" layer="94" curve="-180"/>
 <wire x1="7.62" y1="0" x2="10.16" y2="0" width="0.254" layer="94" curve="-180"/>
@@ -5233,27 +5218,21 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <pin name="1" x="2.54" y="0" length="point"/>
 <pin name="2" x="17.78" y="0" length="point"/>
 </symbol>
+<symbol name="USB2">
+<wire x1="0" y1="0" x2="0" y2="20.32" width="0.254" layer="94"/>
+<wire x1="0" y1="20.32" x2="25.4" y2="20.32" width="0.254" layer="94"/>
+<wire x1="25.4" y1="20.32" x2="25.4" y2="0" width="0.254" layer="94"/>
+<wire x1="25.4" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VCC" x="-5.08" y="17.78" length="middle"/>
+<pin name="D+" x="-5.08" y="15.24" length="middle"/>
+<pin name="D-" x="-5.08" y="12.7" length="middle"/>
+<pin name="ID" x="-5.08" y="10.16" length="middle"/>
+<pin name="GND" x="-5.08" y="7.62" length="middle"/>
+<pin name="SHIELD1" x="-5.08" y="5.08" length="middle"/>
+<pin name="SHIELD2" x="-5.08" y="2.54" length="middle"/>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="USB-VERT">
-<gates>
-<gate name="G$1" symbol="USB-VERT" x="-5.08" y="2.54"/>
-</gates>
-<devices>
-<device name="" package="USB-VERT">
-<connects>
-<connect gate="G$1" pin="D+" pad="3"/>
-<connect gate="G$1" pin="D-" pad="2"/>
-<connect gate="G$1" pin="GND" pad="5"/>
-<connect gate="G$1" pin="ID" pad="4"/>
-<connect gate="G$1" pin="VCC" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="SRU1028">
 <gates>
 <gate name="G$1" symbol="SRU1028" x="-10.16" y="0"/>
@@ -5263,6 +5242,27 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <connects>
 <connect gate="G$1" pin="1" pad="P$1"/>
 <connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="USB2">
+<gates>
+<gate name="G$1" symbol="USB2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="USB2">
+<connects>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+<connect gate="G$1" pin="SHIELD1" pad="SHIELD1"/>
+<connect gate="G$1" pin="SHIELD2" pad="SHIELD2"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8612,7 +8612,6 @@ Metric Code Size 5664</description>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" deviceset="GND" device=""/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
-<part name="U$2" library="ti" deviceset="USB-VERT" device=""/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="U$3" library="ti" deviceset="SRU1028" device=""/>
 <part name="C3" library="resistor" deviceset="C-US" device="C0603K" value="18 pF"/>
@@ -8620,6 +8619,7 @@ Metric Code Size 5664</description>
 <part name="C6" library="resistor" deviceset="C-US" device="C0805K" value="10uF"/>
 <part name="C5" library="resistor" deviceset="C-US" device="C0805K" value="10uF"/>
 <part name="C4" library="resistor" deviceset="C-US" device="C0805K" value="10uF"/>
+<part name="U$4" library="ti" deviceset="USB2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8645,8 +8645,7 @@ Metric Code Size 5664</description>
 <instance part="SUPPLY6" gate="GND" x="58.42" y="-12.7"/>
 <instance part="SUPPLY7" gate="GND" x="68.58" y="-12.7"/>
 <instance part="JP1" gate="G$1" x="-66.04" y="7.62"/>
-<instance part="U$2" gate="G$1" x="99.06" y="-7.62"/>
-<instance part="SUPPLY8" gate="GND" x="93.98" y="-12.7"/>
+<instance part="SUPPLY8" gate="GND" x="104.14" y="-22.86"/>
 <instance part="U$3" gate="G$1" x="-10.16" y="20.32" smashed="yes"/>
 <instance part="C3" gate="G$1" x="22.86" y="0" smashed="yes">
 <attribute name="NAME" x="23.876" y="0.635" size="1.778" layer="95"/>
@@ -8656,6 +8655,7 @@ Metric Code Size 5664</description>
 <instance part="C6" gate="G$1" x="68.58" y="0"/>
 <instance part="C5" gate="G$1" x="58.42" y="0"/>
 <instance part="C4" gate="G$1" x="48.26" y="0"/>
+<instance part="U$4" gate="G$1" x="106.68" y="-12.7"/>
 </instances>
 <busses>
 </busses>
@@ -8730,9 +8730,17 @@ Metric Code Size 5664</description>
 <pinref part="C6" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="U$4" gate="G$1" pin="GND"/>
+<pinref part="U$4" gate="G$1" pin="SHIELD1"/>
+<wire x1="101.6" y1="-5.08" x2="101.6" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="SHIELD2"/>
+<wire x1="101.6" y1="-7.62" x2="101.6" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-10.16" x2="101.6" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
-<wire x1="93.98" y1="-5.08" x2="93.98" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-20.32" x2="104.14" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="101.6" y="-10.16"/>
+<junction x="101.6" y="-7.62"/>
+<junction x="101.6" y="-5.08"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -8753,7 +8761,7 @@ Metric Code Size 5664</description>
 <junction x="30.48" y="5.08"/>
 <wire x1="48.26" y1="2.54" x2="48.26" y2="5.08" width="0.1524" layer="91"/>
 <junction x="48.26" y="5.08"/>
-<wire x1="93.98" y1="5.08" x2="68.58" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="5.08" x2="68.58" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="5.08" x2="58.42" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="5.08" x2="48.26" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="2.54" x2="22.86" y2="5.08" width="0.1524" layer="91"/>
@@ -8762,11 +8770,11 @@ Metric Code Size 5664</description>
 <wire x1="68.58" y1="2.54" x2="68.58" y2="5.08" width="0.1524" layer="91"/>
 <junction x="58.42" y="5.08"/>
 <junction x="68.58" y="5.08"/>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <pinref part="C4" gate="G$1" pin="1"/>
 <pinref part="C5" gate="G$1" pin="1"/>
 <pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="U$4" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 <net name="N$6" class="0">
